@@ -38,8 +38,14 @@ end
 
 class AlbumRepository
   def all
-    #SELECT id, name, genre FROM artists;
+    #SELECT id, title, release_year, genre FROM albums;
     #returns array of Artist objects
+  end
+
+  def create(album)
+    # INSERT INTO albums (title, release_year, artist_id) VALUES ($1, $2, $3);
+
+    # Returns nothing
   end
 end
 
@@ -56,7 +62,17 @@ artists.find.name # => 'Pixies'
 
 artists
 
+# 5
+# Insert a new Album
 
+repo = AlbumRepository.new
+
+album = Album.new
+album.title = 'Troope le Monde'
+album.release_year = 1991
+album.artist_id = 1
+
+# all_albums should contain the new album
 
 
 7. Reload the SQL seeds before each test run
